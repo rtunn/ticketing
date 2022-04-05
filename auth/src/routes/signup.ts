@@ -2,9 +2,8 @@ import { Request, Response, Router } from "express";
 import { body } from "express-validator";
 import jwt from "jsonwebtoken";
 
-import { validateRequest } from "../middlewares/validate-request";
+import { BadRequestError, validateRequest } from "@rtticketing/common";
 import { User } from "../models/user";
-import { BadRequestError } from "../errors/bad-request-error";
 import { isMongoDuplicateKeyError } from "../util/util";
 
 const router = Router();
@@ -41,7 +40,6 @@ router.post(
       return res.status(201).send(user);
     } catch (err) {
       if (isMongoDuplicateKeyError(err)) {
-        console.log("err is MongoDuplicateKeyError");
         throw new BadRequestError("Email in use.");
       }
 
