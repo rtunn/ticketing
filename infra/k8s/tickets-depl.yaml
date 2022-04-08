@@ -26,6 +26,15 @@ spec:
                 secretKeyRef: 
                   name: ticketing-secrets
                   key: TICKETS_MONGO_URI
+            - name: NATS_URL
+              value: 'http://nats-svc:4222'
+            - name: NATS_CLUSTER_ID
+              value: 'ticketing'
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            
 ---
 apiVersion: v1
 kind: Service
