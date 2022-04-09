@@ -5,6 +5,7 @@ import {
   NotFoundError,
   requireAuth,
   NotAuthorizedError,
+  BadRequestError,
 } from "@rtticketing/common";
 import { Ticket } from "../models/ticket";
 import { TicketUpdatedPublisher } from "../events/publishers/ticket-updated-publisher";
@@ -32,6 +33,10 @@ router.put(
 
     if (req.currentUser!.id !== ticket.userId) {
       throw new NotAuthorizedError();
+    }
+
+    if (ticket.orderId) {
+      throw new BadRequestError("Cannot edit a reserved ticket");
     }
 
     ticket.set({
