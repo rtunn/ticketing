@@ -18,13 +18,14 @@ router.get(
   ],
   async (req: Request, res: Response) => {
     const order = await Order.findOne({
-      id: req.params.orderId,
+      _id: req.params.orderId,
       userId: req.currentUser!.id,
     }).populate("ticket");
 
     if (!order) {
       throw new NotFoundError();
     }
+    console.log("Orders Service responding with orderId", order.id);
     res.send(order);
   }
 );

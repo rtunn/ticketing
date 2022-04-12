@@ -44,6 +44,8 @@ router.post(
     });
     await order.save();
 
+    console.log(`Order ID: ${order.id} expires at ${expiration}`);
+
     // Publish order created event
     await new OrderCreatedPublisher(natsWrapper.client).publish({
       id: order.id,

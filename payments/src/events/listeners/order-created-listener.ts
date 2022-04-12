@@ -1,10 +1,4 @@
-import { natsWrapper } from "../../nats-wrapper";
-import {
-  Listener,
-  Subjects,
-  OrderCreatedEvent,
-  OrderStatus,
-} from "@rtticketing/common";
+import { Listener, Subjects, OrderCreatedEvent } from "@rtticketing/common";
 import { queueGroupName } from "./queue-group-name";
 import { Message } from "node-nats-streaming";
 import { Order } from "../../models/order";

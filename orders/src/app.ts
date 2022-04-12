@@ -2,6 +2,7 @@ import express from "express";
 import "express-async-errors";
 import { json } from "body-parser";
 import cookieSession from "cookie-session";
+import nocache from "nocache";
 
 import { currentUser, errorHandler, NotFoundError } from "@rtticketing/common";
 import { newOrderRouter } from "./routes/new";
@@ -18,6 +19,8 @@ app.use(
     secure: process.env.NODE_ENV !== "test",
   })
 );
+app.use(nocache());
+app.set("etag", false);
 app.use(currentUser);
 
 app.use(newOrderRouter);
