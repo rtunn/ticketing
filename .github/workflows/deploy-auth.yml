@@ -24,6 +24,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./auth
-          file: ./Dockerfile
+          file: ./auth/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/auth:latest
