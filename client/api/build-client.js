@@ -3,7 +3,7 @@ import axios from "axios";
 const buildClient = ({ req }) => {
   if (typeof window === "undefined") {
     return axios.create({
-      baseURL: "http://ingress.ingress.svc.cluster.local",
+      baseURL: "http://ticketingapp.empirewebdevelopment.com",
       headers: {
         "Cache-Control": "no-cache",
         Pragma: "no-cache",
