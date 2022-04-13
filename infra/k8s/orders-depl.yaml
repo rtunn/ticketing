@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orders
-          image: localhost:32000/orders
+          image: rtunn/orders
           env:
             - name: JWT_KEY
               valueFrom:

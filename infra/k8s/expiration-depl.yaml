@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: expiration
-          image: localhost:32000/expiration
+          image: rtunn/expiration
           env:
             - name: REDIS_HOST
               value: 'expiration-redis-svc'

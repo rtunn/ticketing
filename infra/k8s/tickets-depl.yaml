@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: tickets
-          image: localhost:32000/tickets
+          image: rtunn/tickets
           env:
             - name: JWT_KEY
               valueFrom:

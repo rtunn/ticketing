@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: localhost:32000/auth
+          image: rtunn/auth
           env:
             - name: JWT_KEY
               valueFrom:
