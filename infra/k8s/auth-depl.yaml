@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: rtunn/auth
+          image: rtunnell9/auth
           env:
             - name: JWT_KEY
               valueFrom:

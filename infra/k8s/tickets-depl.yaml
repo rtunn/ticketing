@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: tickets
-          image: rtunn/tickets
+          image: rtunnell9/tickets
           env:
             - name: JWT_KEY
               valueFrom:

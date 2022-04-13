@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: rtunn/client
+          image: rtunnell9/client
 ---
 apiVersion: v1
 kind: Service

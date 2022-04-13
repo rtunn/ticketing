@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: payments
-          image: rtunn/payments
+          image: rtunnell9/payments
           env:
             - name: JWT_KEY
               valueFrom:
