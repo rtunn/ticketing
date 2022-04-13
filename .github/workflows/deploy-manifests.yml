@@ -18,6 +18,6 @@ jobs:
         with:
           token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
       - name: Configure doctl Context
-        run: doctl kubernetes cluster kubeconfig save ticketing
+        run: doctl kubernetes cluster kubeconfig save k8s-ticketing
       - name: Apply Manifests
         run: kubectl apply -f infra/k8s && kubectl apply -f infra/k8s-prod
